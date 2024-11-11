@@ -1,0 +1,200 @@
+/* Global styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #0A0C10;
+    color: #FFFFFF;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url('/Education/backgrounf.png'); /* Path to your background image */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+/* Header styles */
+header {
+    height: auto;
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(10, 12, 16, 0.9); /* Add transparency for better readability */
+    z-index: 1000;
+    padding: 20px;
+}
+
+nav {
+    position: absolute;
+    top: 60px;
+    left: 60px;
+    display: flex;
+    align-items: center;
+}
+
+/* Menu Icon Styling to Match */
+.menu-icon {
+    width: 60px;
+    height: auto;
+    cursor: pointer;
+    margin-right: 20px;
+    transition: transform 0.3s;
+}
+
+.menu-icon:hover {
+    transform: rotate(90deg);
+}
+
+#menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: none;
+    flex-direction: column;
+    gap: 15px;
+    position: absolute;
+    top: 60px;
+    left: 50px;
+    background: rgba(10, 12, 16, 0.95); /* Semi-transparent background */
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.7);
+    transform: translateY(-20px);
+    opacity: 0;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    z-index: 1000;
+}
+
+#menu.show {
+    display: flex;
+    transform: translateY(0);
+    opacity: 1;
+    animation: slideDown 0.5s ease-out forwards;
+}
+
+#menu li {
+    margin: 0;
+    opacity: 0;
+    transform: translateX(-20px);
+    animation: fadeIn 0.5s ease-out forwards;
+    animation-delay: calc(0.1s * var(--i));
+}
+
+#menu li a {
+    color: #A6FFF4;
+    text-decoration: none;
+    padding: 10px 20px;
+    display: block;
+    border-radius: 8px;
+    transition: background-color 0.3s, color 0.3s;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+#menu li a:hover {
+    background-color: #64FFDA;
+    color: #0A0C10;
+}
+
+/* Education section with transparent background */
+.education-section {
+    width: 80%;
+    max-width: 900px;
+    margin: 100px auto 0;
+    padding: 40px;
+    text-align: left;
+    background-color: rgba(10, 12, 16, 0.65); /* Semi-transparent background */
+    border-radius: 12px;
+    position: relative;
+    overflow: hidden;
+}
+
+h1 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 3rem;
+    color: #64FFDA;
+    margin-bottom: 50px;
+}
+
+.education-item {
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 20px;
+}
+
+/* Text styles */
+.degree h2 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.8rem;
+    font-weight: 500;
+    margin: 0;
+}
+
+.degree p {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.2rem;
+    color: #64FFDA;
+    margin: 5px 0 0 0;
+}
+
+.year p {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, 0.7);
+    margin: 0;
+}
+
+/* Add gradient background effect on the left side */
+.education-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 150px;
+    height: 100%;
+    background: linear-gradient(to bottom, #FB9676, #D761CB, #A72CEB);
+    filter: blur(100px);
+    z-index: -1;
+}
+
+/* Footer styles */
+footer {
+    text-align: center;
+    padding: 20px 0;
+    background-color: rgba(10, 12, 16, 0.85); /* Semi-transparent footer */
+    color: #FFFFFF;
+}
+
+/* Keyframes for animations */
+@keyframes slideDown {
+    from {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        transform: translateX(-20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+h1,h2,p{
+    font-family: 'Poppins', sans-serif;;
+}

@@ -1,0 +1,219 @@
+/* Global styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #0A0C10;
+    color: #FFFFFF;
+}
+
+/* Header styles */
+header {
+    height: auto;
+    background: url('/about/home.png') no-repeat center center/cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+}
+
+nav {
+    position: absolute;
+    top: 60px;
+    left: 60px; /* Adjust the distance from the left edge */
+    display: flex;
+    align-items: center;
+}
+
+.menu-icon {
+    width: 60px; /* Larger icon */
+    height: auto;
+    cursor: pointer;
+    margin-right: 20px;
+    transition: transform 0.3s; /* Smooth transition for hover effect */
+}
+
+.menu-icon:hover {
+    transform: rotate(90deg); /* Rotate icon on hover */
+}
+
+#menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: none;
+    flex-direction: column;
+    gap: 15px; /* Increased gap between items */
+    position: absolute;
+    top: 60px;
+    left: 50px; /* Adjust the distance from the left edge */
+    background: rgba(10, 12, 16, 0.95); /* More transparent background */
+    padding: 20px; /* More padding for a spacious look */
+    border-radius: 12px; /* More rounded corners */
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.7); /* Enhanced shadow */
+    transform: translateY(-20px); /* Slide-in effect */
+    opacity: 0; /* Initially hidden */
+    transition: opacity 0.3s ease, transform 0.3s ease; /* Smooth transition */
+    z-index: 1000; /* Ensure it stays on top */
+}
+
+#menu.show {
+    display: flex;
+    transform: translateY(0); /* Slide to position */
+    opacity: 1; /* Fully opaque when shown */
+    animation: slideDown 0.5s ease-out forwards; /* Animation effect */
+}
+
+#menu li {
+    margin: 0;
+    opacity: 0; /* Initially hidden */
+    transform: translateX(-20px); /* Slide-in effect */
+    animation: fadeIn 0.5s ease-out forwards; /* Fade-in effect */
+    animation-delay: calc(0.1s * var(--i)); /* Staggered delay for each item */
+}
+
+#menu li a {
+    color: #A6FFF4;
+    text-decoration: none;
+    padding: 10px 20px;
+    display: block;
+    border-radius: 8px; /* More rounded corners for links */
+    transition: background-color 0.3s, color 0.3s; /* Smooth transition for hover effect */
+    background: rgba(255, 255, 255, 0.1); /* Slightly visible background */
+}
+
+#menu li a:hover {
+    background-color: #64FFDA; /* Background on hover */
+    color: #0A0C10; /* Text color on hover */
+}
+
+/* About section styles */
+.about-section {
+    padding: 100px 50px;
+    background-color: #0A0C10;
+    color: #FFFFFF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+.about-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Reduces space between text and image */
+    gap: 20px; /* Add a small gap for breathing room */
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+
+.about-text {
+    max-width: 600px;
+    margin-right: 50px;
+}
+
+.about-text h2 {
+    font-size: 3rem;
+    color: #64FFDA;
+    margin-bottom: 20px;
+}
+
+.about-text p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+}
+
+.about-image img {
+    max-width: 100%;
+    border-radius: 20px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.7);
+}
+
+/* Add this CSS for the gradient shape around the image */
+.image-pattern {
+    position: relative;
+    display: inline-block;
+    width: 300px; /* Adjust as per your desired image size */
+    height: 400px; /* Adjust as per your desired image size */
+    background: linear-gradient(135deg, #C53533,#FB9676, #D761CB, #A72CEB);
+    border-radius: 50% 40% 60% 40% / 30% 50% 30% 50%; /* Dynamic shape effect */
+    padding: 20px;
+    overflow: hidden;
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.6);
+}
+
+.image-pattern img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 15px; /* Rounded corners inside the shape */
+    clip-path: circle(); /* Or use clip-path for specific shapes */
+}
+
+/* Update the existing about-image container to adjust for the new look */
+.about-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.gradient-background {
+    position: absolute;
+    width: 400px; /* Adjust the size as needed */
+    height: 500px; /* Adjust the size as needed */
+    background: linear-gradient(45deg, #C53533,#FB9676, #D761CB, #A72CEB); /* Your gradient colors */
+    border-radius: 50%; /* This creates a circular shape, modify for flowiness */
+    z-index: 1; /* Ensure the gradient stays behind the image */
+    filter: blur(80px); /* Softens the gradient edges for a more flowy look */
+}
+
+.about-image {
+    position: relative;
+    width: 400px; /* Match this with the gradient size */
+    height: 500px; /* Match this with the gradient size */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.flowy-image {
+    position: relative;
+    z-index: 2; /* Ensure the image stays on top of the gradient */
+    width: 100%; /* Scale the image to fill the container */
+    height: 100%;
+    object-fit: cover; /* Ensures the image covers the whole container */
+    clip-path: url('#yourClipPath'); /* Optional: Use this if you have a custom clip-path for the flowy effect */
+    border-radius: 20px; /* Optional: Add some rounding to the image */
+}
+
+/* Keyframes for animations */
+@keyframes slideDown {
+    from {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        transform: translateX(-20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}

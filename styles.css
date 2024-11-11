@@ -1,0 +1,162 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #0A0C10;
+    color: #FFFFFF;
+}
+
+header {
+    height: 100vh;
+    background: url('/Home/home.png') no-repeat center center/cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+}
+
+nav {
+    position: absolute;
+    top: 60px;
+    left: 60px; /* Adjust the distance from the left edge */
+    display: flex;
+    align-items: center;
+}
+
+.menu-icon {
+    width: 60px; /* Larger icon */
+    height: auto;
+    cursor: pointer;
+    margin-right: 20px;
+    transition: transform 0.3s; /* Smooth transition for hover effect */
+}
+
+.menu-icon:hover {
+    transform: rotate(90deg); /* Rotate icon on hover */
+}
+
+#menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: none;
+    flex-direction: column;
+    gap: 15px; /* Increased gap between items */
+    position: absolute;
+    top: 60px;
+    left: 50px; /* Adjust the distance from the left edge */
+    background: rgba(10, 12, 16, 0.95); /* More transparent background */
+    padding: 20px; /* More padding for a spacious look */
+    border-radius: 12px; /* More rounded corners */
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.7); /* Enhanced shadow */
+    transform: translateY(-20px); /* Slide-in effect */
+    opacity: 0; /* Initially hidden */
+    transition: opacity 0.3s ease, transform 0.3s ease; /* Smooth transition */
+    z-index: 1000; /* Ensure it stays on top */
+}
+
+#menu.show {
+    display: flex;
+    transform: translateY(0); /* Slide to position */
+    opacity: 1; /* Fully opaque when shown */
+    animation: slideDown 0.5s ease-out forwards; /* Animation effect */
+}
+
+#menu li {
+    margin: 0;
+    opacity: 0; /* Initially hidden */
+    transform: translateX(-20px); /* Slide-in effect */
+    animation: fadeIn 0.5s ease-out forwards; /* Fade-in effect */
+    animation-delay: calc(0.1s * var(--i)); /* Staggered delay for each item */
+}
+
+#menu li a {
+    color: #A6FFF4;
+    text-decoration: none;
+    padding: 10px 20px;
+    display: block;
+    border-radius: 8px; /* More rounded corners for links */
+    transition: background-color 0.3s, color 0.3s; /* Smooth transition for hover effect */
+    background: rgba(255, 255, 255, 0.1); /* Slightly visible background */
+}
+
+#menu li a:hover {
+    background-color: #64FFDA; /* Background on hover */
+    color: #0A0C10; /* Text color on hover */
+}
+
+.header-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+header h1 {
+    font-size: 3rem;
+    margin: 0;
+    color: #FFFFFF; /* Adjust the color */
+}
+
+header h1 span {
+    color: #64FFDA; /* Adjust the color */
+}
+
+header p {
+    font-size: 1.2rem;
+    color: #FFFFFF; /* Adjust the color */
+    margin: 10px 0 20px;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    color: #A6FFF4;
+    border: 2px solid #A6FFF4;
+    padding: 10px 30px;
+    text-decoration: none;
+    border-radius: 30px;
+    transition: background-color 0.3s, color 0.3s;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.btn:hover {
+    background-color: #A6FFF4;
+    color: #0A0C10;
+}
+
+.btn::after {
+    content: "→";
+    margin-left: 10px;
+    font-size: 1.2rem;
+    transition: margin-left 0.3s;
+}
+
+.btn:hover::after {
+    margin-left: 15px;
+}
+
+/* Keyframes for animations */
+@keyframes slideDown {
+    from {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        transform: translateX(-20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}

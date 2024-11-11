@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connect</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/Connect/connect.css">
+</head>
+<body>
+    <!-- Add the navigation bar with the menu icon -->
+    <header>
+        <nav>
+            <img src="/Home/logo.png" alt="Menu Icon" class="menu-icon" onclick="toggleMenu()">
+            <ul id="menu">
+                <li><a href="/index.html">Home</a></li>
+                <li><a href="/About/about.html">About</a></li>
+                <li><a href="/Education/education.html">Education</a></li>
+                <li><a href="/Skills/skills.html">Skills</a></li>
+                <li><a href="/Projects/projects.html">Projects</a></li>
+                <li><a href="/Experience/experience.html">Experience</a></li>
+                <li><a href="/Extracurricular/extra.html">Extracurricular</a></li>
+                <li><a href="/Connect/connect.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <!-- Left section with video and text overlay -->
+        <div class="left-section">
+            <video autoplay loop muted playsinline id="background-video">
+                <source src="/Connect/Video background.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="text-overlay">
+                <h1>LET'S CONNECT!</h1>
+            </div>
+        </div>
+
+        <!-- Right section with contact details -->
+        <div class="right-section">
+            <h2>Phone</h2>
+            <p>(+91)-7284824379</p>
+            
+            <h2>Email</h2>
+            <p>tanvikappala@gmail.com</p>
+            
+            <h2>Social</h2>
+            <div class="social-icons">
+                <a href="https://www.linkedin.com/in/tanviananyakappala/"><img src="/Connect/github.png" alt="GitHub"></a>
+                <a href="https://github.com/AnanyaKappala"><img src="/Connect/linkedin.png" alt="LinkedIn"></a>
+            </div>
+
+            <button class="message-me" onclick="goToMessagePage()">MESSAGE ME</button>
+        </div>
+    </div>
+
+    <script src="/Connect/connect.js"></script>
+    <script src="/script.js"></script> <!-- Include the script for the menu toggle -->
+</body>
+</html>

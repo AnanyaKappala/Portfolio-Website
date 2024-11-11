@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Message Form</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/Connect/Message Me/message.css">
+    <!-- Add the EmailJS SDK -->
+    <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function() {
+            emailjs.init("ekyH9jsVCn3fpMj7c");  // Replace with your EmailJS user ID
+        })();
+    </script>
+</head>
+<body>
+
+    <!-- Menu Icon and Navigation -->
+    <header id="home">
+        <nav>
+            <img src="/Home/logo.png" alt="Menu Icon" class="menu-icon" onclick="toggleMenu()"> <!-- Placeholder for the menu icon -->
+            <ul id="menu">
+                <li><a href="/index.html">Home</a></li>
+                <li><a href="/About/about.html">About</a></li>
+                <li><a href="/Education/education.html">Education</a></li>
+                <li><a href="/Skills/skills.html">Skills</a></li>
+                <li><a href="/Projects/projects.html">Projects</a></li>
+                <li><a href="/Experience/experience.html">Experience</a></li>
+                <li><a href="/Extracurricular/extra.html">Extracurricular</a></li>
+                <li><a href="/Connect/connect.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <div class="contact-left">
+            <h1>Tanvi <br>Ananya <br>Kappala</h1>
+            <p>I aim to respond within 24 hours. <br>Your message is important to me!</p>
+        </div>
+
+        <div class="contact-right">
+            <form id="contactForm" onsubmit="sendEmail(event)">
+                <input type="text" name="user_name" placeholder="Name" required>
+                <input type="email" name="user_email" placeholder="Email" required>
+                <input type="text" name="user_phone" placeholder="Phone" required>
+                <input type="text" name="user_country" placeholder="Country" required>
+                <input type="text" name="user_job" placeholder="Job Title" required>
+                <textarea name="message" placeholder="Your Message" required></textarea>
+                <button type="submit">SEND</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="/Connect/Message Me/message.js"></script>
+    <script src="/styles.css"></script> <!-- Include the same JavaScript file for menu toggle -->
+
+</body>
+</html>

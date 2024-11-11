@@ -1,0 +1,206 @@
+/* Global Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    background: url('/Skills/background.png') no-repeat center center/cover; /* Add your background image here */
+    color: #FFFFFF;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Navigation Menu */
+nav {
+    position: absolute;
+    top: 60px;
+    left: 60px;
+    display: flex;
+    align-items: center;
+}
+
+.menu-icon {
+    width: 60px;
+    height: auto;
+    cursor: pointer;
+    margin-right: 20px;
+    transition: transform 0.3s;
+}
+
+.menu-icon:hover {
+    transform: rotate(90deg);
+}
+
+#menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: none;
+    flex-direction: column;
+    gap: 15px;
+    position: absolute;
+    top: 60px;
+    left: 50px;
+    background: rgba(10, 12, 16, 0.95);
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.7);
+    transform: translateY(-20px);
+    opacity: 0;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    z-index: 1000;
+}
+
+#menu.show {
+    display: flex;
+    transform: translateY(0);
+    opacity: 1;
+}
+
+#menu li {
+    margin: 0;
+    opacity: 0;
+    transform: translateX(-20px);
+    animation: fadeIn 0.5s ease-out forwards;
+}
+
+#menu li a {
+    color: #A6FFF4;
+    text-decoration: none;
+    padding: 10px 20px;
+    display: block;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.1);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+#menu li a:hover {
+    background-color: #64FFDA;
+    color: #0A0C10;
+}
+
+/* Keyframes */
+@keyframes fadeIn {
+    from {
+        transform: translateX(-20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Skills Page Styles */
+.skills-container {
+    width: 70%; /* Increased width for better text fit */
+    max-width: 1000px; /* Increased max-width */
+    text-align: center;
+    position: relative;
+    padding: 20px; /* Add some padding to create breathing space */
+}
+
+.skills-container h1 {
+    font-size: 4rem;
+    color: #FFFFFF;
+    margin-bottom: 20px;
+}
+
+.skills-wrapper {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start; /* Align text to the top */
+    flex-wrap: wrap; /* Allow wrapping for smaller screens */
+    position: relative;
+    height: auto; /* Remove fixed height */
+    overflow: visible; /* Make sure all content is visible */
+    margin-top: 20px; /* Add margin for better spacing */
+    z-index: 1; /* Set a lower z-index for the main wrapper */
+}
+
+.skills-page {
+    display: none;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.skills-page.active {
+    display: flex;
+}
+
+.skill-category {
+    width: 45%; /* Adjust width to fit larger text */
+    margin-bottom: 30px; /* Add space between categories */
+    text-align: left; /* Align text to the left */
+}
+
+.skill-category h2 {
+    font-size: 2rem;
+    color: #64FFDA;
+    margin-bottom: 10px;
+}
+
+.skill-category ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.skill-category ul li {
+    font-size: 1.2rem;
+    line-height: 1.5rem;
+    color: #FFFFFF;
+    margin-bottom: 8px;
+}
+
+/* Remove Gradient background effect from text */
+.skills-wrapper::before,
+.skills-wrapper::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 150px;
+    height: 100%;
+    background: linear-gradient(to bottom, #FB9676, #D761CB, #A72CEB);
+    filter: blur(160px);
+    z-index: -1; /* Set z-index to make sure it stays behind the arrows */
+}
+
+.skills-wrapper::before {
+    left: 0;
+}
+
+.skills-wrapper::after {
+    right: 0;
+}
+
+/* Navigation arrows */
+.navigation-arrows {
+    position: absolute;
+    bottom: 10px; /* Move arrows closer to the bottom */
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 30; /* Set a higher z-index to make sure arrows are above everything */
+}
+
+.arrow {
+    cursor: pointer;
+    font-size: 4rem;
+    color: #64FFDA;
+    margin: 0 20px;
+    transition: transform 0.3s;
+}
+
+
+.arrow:hover {
+    transform: scale(1.2);
+}
+
+
+.arrow:hover {
+    transform: scale(1.2);
+}

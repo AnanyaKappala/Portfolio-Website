@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skills - Tanvi Ananya</title>
+    <link rel="stylesheet" href="/Skills/skills.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Menu Icon and Navigation -->
+    <header id="skills">
+        <nav>
+            <img src="/Home/logo.png" alt="Menu Icon" class="menu-icon" onclick="toggleMenu()"> <!-- Placeholder for the menu icon -->
+            <ul id="menu">
+                <li><a href="/index.html">Home</a></li>
+                <li><a href="/About/about.html">About</a></li>
+                <li><a href="/Education/education.html">Education</a></li>
+                <li><a href="/Skills/skills.html">Skills</a></li>
+                <li><a href="/Projects/projects.html">Projects</a></li>
+                <li><a href="/Experience/experience.html">Experience</a></li>
+                <li><a href="/Extracurricular/extra.html">Extracurricular</a></li>
+                <li><a href="/Connect/connect.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Skills Content -->
+    <div class="skills-container">
+        <h1>Skills</h1>
+        <!-- Skill sections will rotate based on user interaction -->
+        <div class="skills-wrapper">
+            <div class="skills-page" id="page1">
+                <div class="skill-category">
+                    <h2>Programming Languages</h2>
+                    <ul>
+                        <li>Python</li>
+                        <li>Java</li>
+                        <li>C</li>
+                        <li>C++</li>
+                        <li>HTML/CSS</li>
+                        <li>JavaScript</li>
+                        <li>SQL</li>
+                        <li>Assembly Language</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h2>Developer Tools</h2>
+                    <ul>
+                        <li>VS Code</li>
+                        <li>Eclipse</li>
+                        <li>Git</li>
+                        <li>GitHub</li>
+                        <li>Anaconda</li>
+                        <li>Jupyter Notebook</li>
+                        <li>Google Collab</li>
+                        <li>Figma</li>
+                        <li>Shell Script</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="skills-page" id="page2">
+                <div class="skill-category">
+                    <h2>Technologies & Frameworks</h2>
+                    <ul>
+                        <li>Linux</li>
+                        <li>MongoDB</li>
+                        <li>MySQL</li>
+                        <li>Oracle</li>
+                        <li>AWS</li>
+                        <li>Apache Hadoop</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h2>Areas of Expertise</h2>
+                    <ul>
+                        <li>Web Development</li>
+                        <li>Machine Learning</li>
+                        <li>Data Analytics</li>
+                        <li>Artificial Intelligence</li>
+                        <li>Graphic Design</li>
+                        <li>Data Structures</li>
+                        <li>Database Management</li>
+                        <li>Software Programming</li>
+                        <li>Marketing</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Navigation Arrows -->
+        <div class="navigation-arrows">
+            <span class="arrow left-arrow" onclick="previousPage()">&#8249;</span>
+            <span class="arrow right-arrow" onclick="nextPage()">&#8250;</span>
+        </div>
+    </div>
+
+    <script src="/Skills/skills.js"></script> <!-- JavaScript for skill page functionality -->
+    <script src="/script.js"></script> <!-- JavaScript for menu functionality -->
+</body>
+</html>

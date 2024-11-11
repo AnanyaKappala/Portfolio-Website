@@ -1,0 +1,203 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #0A0C10;
+    color: #FFFFFF;
+}
+
+.container {
+    display: flex;
+    height: 100vh; /* Full viewport height */
+}
+
+.left-section {
+    position: relative;
+    flex: 0 0 65%; /* This makes the video take up 70% of the width */
+    overflow: hidden;
+}
+
+/* Video styles */
+#background-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1; /* Ensure the video stays behind other elements */
+}
+
+/* Text overlay on the video */
+.text-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 3rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* Right section styles */
+.right-section {
+    flex: 0 0 35%; /* This makes the right section take up 30% of the width */
+    background-color: #0A0C10;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding-left: 50px;
+}
+
+.right-section h2 {
+    color: #00FFD1;
+    margin-bottom: 5px;
+}
+
+.right-section p, .social-icons {
+    margin-bottom: 20px;
+}
+
+.social-icons img {
+    width: 55px;
+    margin-right: 15px;
+    border-radius: 200px;
+}
+
+.message-me {
+    font-family: 'Poppins', sans-serif;
+    background-color: transparent;
+    color: #00FFD1;
+    border: 2px solid #00FFD1;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: 0.3s;
+    border-radius: 200px;
+}
+
+.message-me:hover {
+    background-color: #00FFD1;
+    color: #0A0C10;
+}
+
+@media screen and (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .right-section {
+        padding-left: 20px;
+    }
+
+    .text-overlay {
+        font-size: 2rem;
+    }
+
+    .left-section {
+        flex: 0 0 auto; /* Reset the flex value for mobile screens */
+        height: 50vh; /* Ensure the video section is smaller on mobile */
+    }
+}
+
+/* Menu icon and nav styles */
+nav {
+    position: absolute;
+    top: 60px;
+    left: 60px;
+    display: flex;
+    align-items: center;
+}
+
+.menu-icon {
+    width: 60px; /* Larger icon */
+    height: auto;
+    cursor: pointer;
+    margin-right: 20px;
+    transition: transform 0.3s; /* Smooth transition for hover effect */
+    z-index: 1000; /* Bring the icon above the video */
+    position: relative; /* Ensure z-index takes effect */
+}
+
+.menu-icon:hover {
+    transform: rotate(90deg);
+}
+
+#menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: none;
+    flex-direction: column;
+    gap: 15px;
+    position: absolute;
+    top: 60px;
+    left: 50px;
+    background: rgba(10, 12, 16, 0.95);
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.7); /* Enhanced shadow */
+    transform: translateY(-20px); /* Slide-in effect */
+    opacity: 0; /* Initially hidden */
+    transition: opacity 0.3s ease, transform 0.3s ease; /* Smooth transition */
+    z-index: 1000;
+}
+
+#menu.show {
+    display: flex;
+    transform: translateY(0); /* Slide to position */
+    opacity: 1; /* Fully opaque when shown */
+    animation: slideDown 0.5s ease-out forwards;
+}
+
+#menu li {
+    margin: 0;
+    opacity: 0;
+    transform: translateX(-20px);
+    animation: fadeIn 0.5s ease-out forwards;
+    animation-delay: calc(0.1s * var(--i));
+}
+
+#menu li a {
+    color: #A6FFF4;
+    text-decoration: none;
+    padding: 10px 20px;
+    display: block;
+    border-radius: 8px;
+    transition: background-color 0.3s, color 0.3s;
+    background: rgba(255, 255, 255, 0.1); /* Slightly visible background */
+}
+
+#menu li a:hover {
+    background-color: #64FFDA;
+    color: #0A0C10;
+}
+
+/* Animations for menu */
+@keyframes slideDown {
+    from {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        transform: translateX(-20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
